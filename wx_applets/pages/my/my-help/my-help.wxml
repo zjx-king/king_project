@@ -1,0 +1,8 @@
+<view class="help">
+  <view class="help-title">
+    常见问题 
+  </view>
+  <view class="help-list" wx:for="{{helpList}}" wx:key>
+    <text>{{item.problem}}</text><image src="/images/icon-right.png"/>
+  </view>
+</view>

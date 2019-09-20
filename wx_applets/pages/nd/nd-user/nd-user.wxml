@@ -1,0 +1,18 @@
+<!--pages/nd/nd-user/nd-user.wxml-->
+<scroll-view scroll-y="true">
+  <view class="ul">
+    <view class="li" wx:for="{{list}}" wx:key data-id='{{item.user_id}}' bindtap="goOthers">
+      <view class="left">
+        <image class="tx" src='{{item.user_image}}'></image>
+        <text>{{item.user_name}}</text>
+      </view>
+      <view class="right">
+        <text class="span">共{{item.user_brainhole_count}}个脑洞</text>
+        <image class="icon" src='/images/icon-right.png'></image>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view hidden='{{show}}' class="tips" style='text-align:center;padding:20rpx 0;'>
+  没有更多了
+</view>

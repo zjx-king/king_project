@@ -1,0 +1,18 @@
+<view class="personal">
+  <form bindsubmit="formSubmit">
+    <view class="btn">
+      <button form-type="submit">完成</button>
+    </view>
+    <image bindtap="goPhoto" mode="aspectFill" src="{{imgUrl}}" />
+    <view class="personal-edit">
+      <text>昵称</text>
+
+      <input placeholder="输入昵称" maxlength="15" name="name" value="{{user.user_name}}" />
+    </view>
+    <view class="personal-edit">
+      <text>签名</text>
+
+      <input placeholder="输入签名" maxlength="30" name="introduce" value="{{user.user_introduce}}" />
+    </view>
+  </form>
+</view> 

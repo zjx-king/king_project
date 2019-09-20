@@ -1,0 +1,103 @@
+.drafts-operation {
+  padding: 0 30rpx;
+  display: -webkit-flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eee;
+  box-sizing: border-box;
+}
+
+.operation {
+  justify-content: flex-end;
+}
+
+.drafts-operation button {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.drafts-list {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  align-items: center;
+}
+.list-right{
+  width: 100%;
+}
+checkbox .wx-checkbox-input {
+  width: 34rpx; /* 背景的宽 */
+  height: 34rpx; /* 背景的高 */
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+ 
+  background: #000;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx; /* 对勾大小 30rpx */
+  color: #fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.list-right text:first-child {
+  display: block;
+  font-size: 32rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 44rpx;
+  margin-bottom: 10rpx;
+}
+
+.list-right text:nth-child(2) {
+  display: block;
+  font-size: 28rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+}
+.list-right view{
+  width: 100%;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.drafts-list .list-right view text{
+   font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: normal;
+  color:rgba(153,153,153,1);
+  line-height: 34rpx;
+}
+.list-right .violation {
+  display: block;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(249, 81, 80, 1);
+  line-height: 34rpx;
+  margin-top: 24rpx;
+}

@@ -1,0 +1,50 @@
+<!--pages/my/my-level/my-level.wxml-->
+<view class="top">
+  <text class="h2">当前经验值：{{user.user_integral}}</text>
+  <view class="level">
+    <view class="item {{index < user.user_level ? 'active' : ''}}" wx:for="{{level}}" wx:key>
+      <text class="p">Lv{{item.lv}}</text>
+      <text class="span">{{item.num}}</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="title">
+  <text>Lv{{user.user_level}}等级特权</text>
+</view>
+
+<view class="cont lv">
+  <image wx:if="{{user.user_level}}" src="/images/my/v{{user.user_level}}.png"></image>
+  <text class="p">获得等级图标，草稿箱可以储存{{levelInfo.draft_num}}个脑洞</text>
+</view>
+
+<view class="title">
+  <text>做任务加速升级</text>
+</view>
+
+<view class="cont ul">
+  <view class="li" wx:for="{{task}}" wx:key>
+    <image class="tx" src="/images/my/my{{item.task_id}}.png"></image>
+    <text class="p w40">{{item.title}}</text>
+    <text class="p">经验值+{{item.num}}</text>
+
+    <button wx:if="{{item.is_complete==0}}" bindtap="toPage" data-url="/pages/index/home/home">去完成</button>
+    <image wx:else class="icon" src="/images/my/icon-g.png"></image>
+  </view>
+</view>
+
+<!-- <view class="cont ul">
+  <view class="li">
+    <image class="tx" src="/images/my/my4.png"></image>
+    <text class="p w40">发布一条脑洞</text>
+    <text class="p">经验值+5</text>
+    <button>去完成</button>
+  </view>
+  <view class="li">
+    <image class="tx" src="/images/my/my5.png"></image>
+    <text class="p w40">参与别人的脑洞</text>
+    <text class="p">经验值+5</text>
+    <button>去完成</button>
+  </view>
+</view> -->

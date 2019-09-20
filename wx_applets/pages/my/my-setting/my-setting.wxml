@@ -1,0 +1,28 @@
+<!--pages/my/my-setting/my-setting.wxml-->
+<view class="ul">
+  <!-- <view class="li border" bindtap="toPage"  data-url="/pages/my/my-safe/my-safe">
+    <text>账户与安全</text>
+    <image src="/images/icon-right.png"></image>
+  </view> -->
+  <view class="li">
+    <text>新消息通知</text>
+    <switch color="#333333" class="switch" checked="{{msg}}" bindchange="switchChange" />
+  </view>
+  <view class="li" bindtap="toPage"  data-url="/pages/my/my-blacklist/my-blacklist">
+    <text>黑名单</text>
+    <image src="/images/icon-right.png"></image>
+  </view>
+  <view class="li" bindtap="toPage"  data-url="/pages/my/my-pact/my-pact">
+    <text>用户协议</text>
+    <image src="/images/icon-right.png"></image>
+  </view>
+  <view class="li border" bindtap="clearStorage">
+    <text>清除缓存</text>
+    <image src="/images/icon-right.png"></image>
+    <text class="span">{{storage}}</text>
+  </view>
+  <view class="li" bindtap="quit">
+    <text>退出登录</text>
+    <image src="/images/icon-right.png"></image>
+  </view>
+</view>

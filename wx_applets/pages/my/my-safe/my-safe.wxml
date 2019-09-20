@@ -1,0 +1,13 @@
+<!--pages/my/my-safe/my-safe.wxml-->
+<view class="ul">
+  <view class="li border" bindtap="toPage" data-url="/pages/my/my-phone/my-phone">
+    <text>手机号</text>
+    <image src="/images/icon-right.png"></image>
+    <text class="span">136****4543</text>
+  </view>
+  <view class="li border">
+    <text>微信</text>
+    <image src="/images/icon-right.png"></image>
+    <text class="span">未绑定</text>
+  </view>
+</view>

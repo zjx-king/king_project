@@ -1,0 +1,12 @@
+<!--pages/my/my-phone/my-phone.wxml-->
+<view class="wrap">
+  <text class="h2">输入验证码</text>
+  <text class="p">短信验证码已发送至{{phone}}</text>
+  <view class="input">
+    <input class="li-input" maxlength="6" bindinput="num" type="number" placeholder="输入验证码" value="{{num}}"></input>
+    <button class="li-btn" bindtap="send" disabled="{{dis}}">{{time}}</button>
+    <text wx:if="{{regRes}}" class="tip">验证码输入错误</text>
+  </view>
+
+  <button bindtap="submit" class="sub {{btn?'':'disable'}}">完成</button>
+</view>

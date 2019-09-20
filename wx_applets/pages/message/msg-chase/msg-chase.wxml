@@ -1,0 +1,27 @@
+<!--pages/message/msg-chase/msg-chase.wxml-->
+<view class="ul" wx:if="{{list.length>0}}">
+  <view class="li  {{item.message_is_read==1?'active':''}}" wx:for="{{list}}" wx:key bindtap="toPage1" data-brainhole="{{item.is_brainhole_id}}" data-article="{{item.article_id}}">
+    <view class="left">
+      <view class="user">
+        <image class="tx" catchtap="toPage2" data-id="{{item.user_id}}" wx:if="{{item.user_image}}" mode="aspectFill" src="{{item.user_image}}"></image>
+        <view class="h3">
+          <text catchtap="toPage2" data-id="{{item.user_id}}" class="span">{{item.user_name}}</text>
+          <text>追更了你的脑洞</text>
+        </view>
+        <text class="time">{{item.year}}年{{item.month}}月{{item.day}}日  {{item.time}}</text>
+      </view>
+      <text class="p">{{item.brainhole_title}}</text>
+      <text wx:if="{{item.article_title && item.previous_seeing_article_id>0}}" class="p">第{{item.previous_seeing_article_id}}章：{{item.article_title}}</text>
+      <text wx:if="{{item.article_title && item.previous_seeing_article_id==0}}" class="p">第1章：{{item.article_title}}</text>
+    </view>
+    <image class="right" wx:if="{{item.brainhole_image}}" mode="aspectFill" src="{{item.brainhole_image}}"></image>
+  </view>
+  <block wx:if="{{list.length>20}}">
+    <text wx:if="{{list.length==total}}" class='tips'>已无更多数据</text>
+    <text wx:else class='tips'>正在加载...</text>
+  </block>
+</view>
+
+<view class="default d-flex" wx:else>
+  <image src="/images/msg/zg.png"></image>
+</view>

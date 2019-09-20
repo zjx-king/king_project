@@ -1,0 +1,67 @@
+<wxs module="filters" src="../../../utils/dataFix.wxs"></wxs>
+
+<scroll-view scroll-y="true">
+  <view class="comment">
+    <view class="comment-list">
+      <view class="list-top">
+        <image class="user" src="{{detailList.user_image}}" />
+        <view>
+          <text>{{detailList.user_name}}</text>
+          <text>{{detailList.comment_add_time}}</text>
+        </view>
+        <view class="list-operation">
+          <view bindtap="fabulous" data-like="{{detailList.is_like}}" data-id="{{detailList.comment_id}}" >
+            <image wx:if="{{detailList.is_like == 1}}" src="/images/index/zan_ok.png" />
+          <image wx:else src="/images/index/zan.png" />
+          <text wx:if="{{detailList.fabulous_num < 10000}}">{{detailList.fabulous_num}}</text>
+        <text wx:else>{{ filters.toFix(detailList.fabulous_num/10000) }}w</text>
+          </view>
+          <view bindtap="goShow">
+            <image src="/images/index/comment.png" />
+          </view>
+        </view>
+      </view>
+      <view class="list-section">
+        {{detailList.comment_content}}
+      </view>
+    </view>
+    <view class="reply-list" wx:for="{{replyList}}" wx:key>
+      <view class="list-top">
+        <image class="user" src="{{item.user_image}}" />
+        <view>
+          <text>{{item.user_name}}</text>
+          <text>{{item.comment_add_time}}</text>
+        </view>
+        <view class="list-operation">
+        <view bindtap="fabulous" data-like="{{item.is_like}}" data-id="{{item.comment_id}}" data-i="{{index}}">
+          <image wx:if="{{item.is_like == 1}}" src="/images/index/zan_ok.png"/>
+        <image wx:else src="/images/index/zan.png"/>
+          <text wx:if="{{item.fabulous_num < 10000}}">{{item.fabulous_num}}</text>
+        <text wx:else>{{ filters.toFix(item.fabulous_num/10000) }}w</text>
+        </view>
+        <view bindtap="goShow" data-id="{{item.user_id}}">
+          <image src="/images/index/comment.png" />
+        </view>
+        </view>
+      </view>
+      <view class="list-section">
+        <text wx:if="{{item.passive_user_name}}">回复</text>
+        <text wx:if="{{item.passive_user_name}}">{{item.passive_user_name}}：</text> {{item.comment_content}}
+      </view>
+    </view>
+    <view hidden='{{show}}'  class="tips" style='text-align:center;padding:20rpx 0;'>
+      没有更多了
+  </view>
+  </view>
+  
+</scroll-view>
+
+<view class="publish" bindtap="goShow">
+  <view>回复评论</view><button>发表</button>
+</view>
+<view class="textareaComment" wx:if="{{publishBoolean}}">
+  <textarea placeholder="写评论" maxlength="150" bindinput="comChange" show-confirm-bar="{{false}}"></textarea>
+  <view>
+    <text class="{{comLen > 0 ? 'boldClass':''}}">{{comLen}}</text><text>/150</text><button bindtap="commentArticle" disabled="{{btnBoolean}}">发表</button>
+  </view>
+</view>

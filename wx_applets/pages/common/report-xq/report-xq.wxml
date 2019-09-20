@@ -1,0 +1,21 @@
+<!--pages/common/report-xq/report-xq.wxml-->
+<view class='wrap'>
+  <text class='bt'>请填写举报内容</text>
+  <textarea placeholder='内容引起严重不适…' bindinput="reportContent" value="{{report_content}}"></textarea>
+  <view class='img'>
+    <view class='img-list'>
+      <view class="list-item" wx:for="{{list}}" wx:key>
+        <image mode="aspectFill" src="{{item}}"></image>
+        <image catchtap="close" data-id="{{index}}" class="close" src='/images/icon-close.png'></image>
+      </view>
+
+    </view>
+    <view class='img-btn' bindtap='chooseImg' hidden="{{status}}">
+      <image src='/images/icon-img.png'></image>
+      <text wx:if="{{list.length==0}}">添加图片</text>
+      <text wx:else>{{list.length}}/3</text>      
+    </view>
+  </view>
+</view>
+
+<view class='btn' bindtap="saveReport">提交</view>

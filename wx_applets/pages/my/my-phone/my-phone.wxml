@@ -1,0 +1,10 @@
+<!--pages/my/my-phone/my-phone.wxml-->
+<view class="wrap">
+  <view class="input">
+    <input maxlength="11" bindinput="num" type="number" placeholder="请输入原手机号" value="{{num}}"></input>
+    <image hidden="{{hidden}}" bindtap="clear" class="clear" src="/images/my/clear.png"></image>
+    <text wx:if="{{regRes}}" class="tip">当前手机号不正确</text>
+  </view>
+
+  <button bindtap="submit" class="{{btn?'':'disable'}}">下一步</button>
+</view>

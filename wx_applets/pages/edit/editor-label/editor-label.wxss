@@ -1,0 +1,172 @@
+/* pages/edit/editor-index/editor-index.wxss */
+
+.tip {
+  background: #fdeded;
+  padding: 20rpx 98rpx;
+  position: relative;
+}
+
+.tip .span {
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1px solid #333;
+}
+
+.tip image {
+  position: absolute;
+  left: 34rpx;
+  top: 22rpx;
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.tip text {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  display: inline-block;
+}
+
+.h2 {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+  display: block;
+  margin-bottom: 30rpx;
+}
+
+.wrap {
+  padding: 20rpx 30rpx;
+  padding-bottom: 110rpx;
+}
+
+.ul {
+  padding-bottom: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.ul::after {
+  content: "";
+  display: block;
+  width: 334rpx;
+  height: 0;
+}
+
+.li {
+  margin: 0 10rpx;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  line-height: 40rpx;
+  padding: 5rpx 40rpx;
+  background:rgba(245,245,245,1);
+  border-radius: 10rpx;
+  /* border: 1px solid #333; */
+  transition: 0.5s;
+}
+
+.li.active {
+  color: #fff;
+  background: #333;
+}
+
+.foot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  padding: 22rpx 0;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 50rpx;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img {
+  margin-right: 30rpx;
+}
+
+.flex .upload {
+  border: 1px dashed #ababab;
+  border-radius: 10rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260rpx;
+  height: 340rpx;
+  flex-direction: column;
+}
+
+.u-img {
+  border: 1px dashed transparent;
+  width: 260rpx;
+  height: 340rpx;
+  border-radius: 10rpx;
+}
+
+.flex .upload image {
+  width: 54rpx;
+  height: 72rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.flex .upload text {
+  display: flex;
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 34rpx;
+}
+
+.img-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  height: 340rpx;
+}
+
+.img-list .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.img-list .mask text {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+.img-list image {
+  width: 120rpx;
+  height: 160rpx;
+  display: flex;
+  border-radius: 10rpx;
+}
+
+.img-list image:nth-child(1), .img-list image:nth-child(2),
+.img-list image:nth-child(3) {
+  margin-bottom: 20rpx;
+}

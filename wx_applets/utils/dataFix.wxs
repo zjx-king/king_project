@@ -1,0 +1,21 @@
+var filters = {
+
+  toFix: function(value) {
+
+    return value.toFixed(1) // 此处2为保留两位小数，保留几位小数，这里写几
+
+  },
+  num: function(val) {
+
+    return parseInt(val)
+  }
+
+}
+
+
+module.exports = {
+
+  toFix: filters.toFix,
+  num: filters.num
+
+}

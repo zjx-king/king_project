@@ -1,0 +1,33 @@
+<!--pages/edit/editor-index/editor-index.wxml-->
+<view class="tip" wx:if="{{drafts == 0 || drafts < 0}}">
+  <image src="/images/icon-warn.png"></image>
+  <text>草稿箱已满，直接上传或</text>
+  <text class="span" bindtap="goDrafts">管理草稿箱</text>
+</view>
+
+<view class="wrap">
+  <text class="h2">选择标签</text>
+  <view class="ul">
+    <view wx:for="{{list}}" wx:key class="li" style="background:{{index===label?item.tag_color:''}};color:{{index===label?'#fff':''}}" bindtap="labelChoose" data-id="{{index}}">{{item.tag_name}}</view>
+  </view>
+
+  <text class="h2">选择封面</text>
+
+  <view class="flex">
+    <view class="img" bindtap="img">
+      <view class="upload" wx:if="{{status}}">
+        <image src="/images/icon-fm.png"></image>
+        <text>点击上传封面</text>
+      </view>
+      <image wx:if="{{!status}}" class="u-img" mode="aspectFill" src="{{src}}"></image>
+    </view>
+    <view class="img-list">
+      <view class="mask" wx:if="{{labelStatus}}">
+        <text>选择标签后才能选择封面哦～</text>
+      </view>
+      <image wx:for="{{imgList}}" wx:key mode="aspectFill" src="{{item.image_path}}" bindtap="chooseImg" data-src="{{item.image_path}}"></image>
+    </view>
+  </view>
+</view>
+
+<view class="foot" bindtap="goWrite">完成</view>

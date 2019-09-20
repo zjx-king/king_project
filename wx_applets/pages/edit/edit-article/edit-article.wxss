@@ -1,0 +1,64 @@
+/* pages/edit/edit-write/edit-write.wxss */
+page{
+  height: 100%;
+  background:rgba(245,245,245,1);
+}
+.write{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.flex{
+  flex: 1;
+  width: 94%;
+  margin: 3% auto;
+  display: flex;
+  flex-direction: column;
+}
+.write-tips{
+  display: flex;
+  justify-content: space-between;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:40rpx;
+}
+.write textarea{
+  width: 100%;
+  flex: 1;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:40rpx;
+}
+.write-title{
+  height: 160rpx;
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+}
+.write-article{
+  flex: 1;
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.write-btn{
+  width: 100%;
+  padding: 24rpx;
+  box-sizing: border-box;
+  background-color: #000;
+  font-size:36rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  text-align: center;
+}

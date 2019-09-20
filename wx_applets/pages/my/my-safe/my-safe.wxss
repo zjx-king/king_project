@@ -1,0 +1,35 @@
+/* pages/my/my-safe/my-safe.wxss */
+
+.ul {
+  border-top: 1px solid #eee;
+}
+
+.ul .li {
+  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 40rpx 30rpx;
+  position: relative;
+}
+
+.ul .li text {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+}
+
+.ul .li image {
+  width: 16rpx;
+  height: 26rpx;
+}
+
+.ul .li .span {
+  font-size: 28rpx;
+  position: absolute;
+  right: 66rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 40rpx;
+}

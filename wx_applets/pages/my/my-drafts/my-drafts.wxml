@@ -1,0 +1,19 @@
+<view class="drafts" wx:if="{{draftsList.length>0}}">
+  <view class="drafts-operation {{!btnBolean ? 'operation' : ''}}">
+    <button hidden="{{btnBolean}}" bindtap="draftsEdit">编辑</button>
+    <button hidden="{{!btnBolean}}" bindtap="draftsCancel">取消</button>
+    <button hidden="{{!btnBolean}}" bindtap="del">删除</button>
+  </view>
+  <view class="drafts-list" wx:for="{{draftsList}}" wx:key>
+    <checkbox hidden="{{!btnBolean}}" checked="{{check}}" data-bind_status="{{item.bind_status}}" data-id="{{item.id}}" data-type="{{item.type}}" bindtap="checkedBox" value="{{item.id}}"></checkbox>
+    <view class="list-right" catchtap="toPage" data-id="{{item.id}}" data-type="{{item.type}}">
+      <text>{{item.brainhole_title}}</text>
+      <text wx:if="{{item.article_chapter}}">第{{item.article_chapter}}章：{{item.article_title}}</text>
+      <text>{{item.year}}-{{item.month}}-{{item.day}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="default d-flex" wx:else>
+  <image src="/images/d-kk.png"></image>
+</view>

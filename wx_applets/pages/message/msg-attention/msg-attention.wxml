@@ -1,0 +1,16 @@
+<!--pages/message/msg-attention/msg-attention.wxml-->
+<view class="ul" wx:if="{{list.length>0}}">
+  <view class="li {{item.message_is_read==1?'active':''}}" wx:for="{{list}}" wx:key bindtap="toPage" data-id="{{item.user_id}}">
+    <image src="{{item.user_image}}"></image>
+    <text class="h2">{{item.user_name}}</text>
+    <text class="p">关注了你</text>
+  </view>
+  <block wx:if="{{list.length>20}}">
+    <text wx:if="{{list.length==total}}" class='tips'>已无更多数据</text>
+    <text wx:else class='tips'>正在加载...</text>
+  </block>
+</view>
+
+<view class="default d-flex" wx:else>
+  <image src="/images/d-fans.png"></image>
+</view>

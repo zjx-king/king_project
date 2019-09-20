@@ -1,0 +1,177 @@
+/* pages/my/my-level/my-level.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.top {
+  margin: 30rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  padding-bottom: 50rpx;
+  margin-bottom: 80rpx;
+}
+
+.top .h2 {
+  padding: 30rpx;
+  font-size: 28rpx;
+  display: block;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+}
+
+.level {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding-top: 30rpx;
+  overflow: hidden;
+}
+
+.level .item {
+  padding-top: 30rpx;
+  width: 16.66%;
+  position: relative;
+}
+
+.level .item::before {
+  content: "";
+  position: absolute;
+  top: -12rpx;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  border: 3rpx solid #e5e5e5;
+  background: #fff;
+  z-index: 99;
+  left: calc(50% - 8rpx);
+}
+
+.level .item::after {
+  content: "";
+  position: absolute;
+  top: -3rpx;
+  left: 0;
+  width: 100%;
+  border: 3rpx solid #e5e5e5;
+}
+
+.level .item.active::before {
+  border: 3rpx solid #333;
+}
+
+.level .item.active::after {
+  border: 3rpx solid #333;
+}
+
+.level .p {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+  display: block;
+}
+
+.level .span {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 34rpx;
+  display: block;
+}
+
+.cont {
+  margin: 0 30rpx;
+  margin-bottom: 80rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  padding: 50rpx 30rpx;
+  position: relative;
+}
+
+.cont .p {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+}
+
+.title {
+  padding-bottom: 40rpx;
+  display: block;
+  text-align: center;
+  position: relative;
+}
+
+.title::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+  top: 22rpx;
+}
+
+.title text {
+  position: relative;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+  background: #f5f5f5;
+  width: 230rpx;
+  display: inline-block;
+}
+
+.lv image {
+  width: 74rpx;
+  height: 60rpx;
+  position: absolute;
+  left: 30rpx;
+  top: calc(50% - 30rpx);
+}
+
+.lv text {
+  padding-left: 95rpx;
+}
+.ul{
+  margin-bottom: 40rpx;
+  padding: 10rpx 30rpx;
+}
+.ul .li {
+  position: relative;
+  padding: 20rpx 0;
+  padding-left: 64rpx;
+  padding-right: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ul .li .tx {
+  position: absolute;
+  left: 0;
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.ul .li .icon {
+  position: absolute;
+  right: 20rpx;
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.ul .li button {
+  position: absolute;
+  right: 0;
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+  padding: 0;
+  background: transparent;
+}

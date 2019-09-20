@@ -1,0 +1,9 @@
+<view class="catalog">
+  <view class="catalog-btn" wx:if="{{cataType == 2}}">
+    <button bindtap="goBack">返回主目录</button>
+  </view>
+  <view class="catalog-list" wx:for="{{catalogList}}" wx:key>
+    <text decode = "{{true}}" class="{{item.article_id ==  article_id ? 'record':''}}" data-article_id="{{item.article_id}}" data-brainhole_id="{{item.brainhole_id}}" data-article_id="{{item.article_id}}"  bindtap="goDetail">第{{item.article_chapter}}章            {{item.article_title}}</text>
+    <text wx:if="{{item.branch}}"  data-brainhole_id="{{item.brainhole_id}}" data-article_parent_id="{{item.article_parent_id}}" bindtap="goBranch">共有{{item.branch}}个分支</text>
+  </view>
+</view>

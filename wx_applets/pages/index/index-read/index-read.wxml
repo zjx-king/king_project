@@ -1,0 +1,86 @@
+<wxs module="filters" src="../../../utils/dataFix.wxs"></wxs>
+
+<view class="read-box" hidden="{{!waitShow}}">
+  <view class="read">
+    <view class="read-header">
+      <text>第{{readDetail.article_chapter}}章</text>
+      <button bindtap="goBranch">共有{{readDetail.branch}}个分支</button>
+      <view wx:if="{{readDetail.is_follow == 0}}" bindtap="collection">
+        <text>追更</text>
+        <image src="/images/index/zhuigeng.png" />
+      </view>
+      <view wx:else bindtap="collection">
+        <text>已追更</text>
+        <image src="/images/index/yzg.png" />
+      </view>
+    </view>
+    <text>{{readDetail.article_title}}</text>
+    <view class="read-author" bindtap="goHide">
+      <image src="{{readDetail.user_image}}" />
+      <text>{{readDetail.user_name}}</text>
+      <text class="section">{{readDetail.article_content}}</text>
+
+    </view>
+  </view>
+  <view class="upNext" hidden="{{statu || status}}">
+    <button bindtap="upper">上一章</button>
+    <button bindtap="next">下一章</button>
+  </view>
+  <view class="read-toast {{statu? 'show':''}}">
+    <view class="write-image" bindtap="goToast">
+      <image class="read-write" src="/images/index/write.png" />
+    </view>
+    <view class="toast-header">
+      <input placeholder="评论本章" bindinput="commentContent" value="{{comment_Content}}" />
+      <text bindtap="commentArticle">发表</text>
+    </view>
+    <view class="toast-nav">
+      <view bindtap="goCatalog">
+        <image src="/images/index/nav1.png" />
+        <text>目录</text>
+      </view>
+      <view bindtap="fabulous">
+        <image wx:if="{{readDetail.is_like == 1}}" src="/images/index/zan_ok.png" />
+        <image wx:else src="/images/index/nav2.png" />
+        <text wx:if="{{readDetail.article_like < 10000}}">{{readDetail.article_like}}</text>
+        <text wx:else>{{ filters.toFix(readDetail.article_like/10000) }}w</text>
+      </view>
+      <view bindtap="goComment">
+        <image src="/images/index/nav3.png" />
+        <text wx:if="{{readDetail.article_comment < 10000}}">{{readDetail.article_comment}}</text>
+        <text wx:else>{{ filters.toFix(readDetail.article_comment/10000) }}w</text>
+      </view>
+      <view bindtap="goReport">
+        <image src="/images/index/report.png" />
+        <text>举报</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="write-toast {{status? 'show':''}}">
+    <text bindtap="writeBranch">写分支</text>
+    <text bindtap="writeContinue">续写</text>
+    <text bindtap="goHide">取消</text>
+  </view>
+
+  <view class="controls {{ statu || status ? 'controlsHidden':''}}">
+    <view bindtap="changeTop"></view>
+    <view bindtap="goShow"></view>
+    <view bindtap="changeBottom"></view>
+  </view>
+</view>
+
+<view class="read-next" hidden="{{waitShow}}">
+  <view class="wait-write">
+    <text wx:if="{{readDetail.article_chapter}}">第{{readDetail.article_chapter + 1}}章</text>
+    <text wx:else>第1章</text>
+    <text></text>
+    <view>
+      <button bindtap="writeContinue">续写</button>
+      <button bindtap="nextNd" hidden="{{nextBtn}}">下一个脑洞</button>
+    </view>
+  </view>
+  <view style='width:560rpx;height:500rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)'>
+    <image style='width:560rpx;height:500rpx;' src="/images/writezj.png" />
+  </view>
+</view>

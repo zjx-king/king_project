@@ -1,0 +1,24 @@
+<view class='login'>
+  <view class="login-logo">
+    <image src='/images/msg1.png'></image>
+    <text>脑洞大大开</text>
+  </view>
+  <view class="login-btn">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信登录</button>
+    <!-- <button bindtap="toPage" data-url="./login-phone/login-phone">输入手机号登录/注册</button> -->
+  </view>
+  <view class="agreement">
+    登录代表你同意
+    <text bindtap="toPage" data-url="/pages/my/my-pact/my-pact">《脑洞大大开用户协议》</text>
+  </view>
+</view>
+
+<view class="mask {{mask?'active':''}}">
+  <view class="model">
+    <text>登录需要获取您的手机号</text>
+    <view>
+      <button bindtap="closeMask">取消</button>
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取</button>
+    </view>
+  </view>
+</view>

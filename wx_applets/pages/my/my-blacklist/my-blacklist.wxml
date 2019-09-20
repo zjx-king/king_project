@@ -1,0 +1,14 @@
+<!--pages/my/my-blacklist/my-blacklist.wxml-->
+<view class="ul">
+  <view class="li" wx:for="{{list}}" wx:key>
+    <image src="{{item.user_image}}"></image>
+    <text>{{item.user_name}}</text>
+    <button catchtap="del" data-id="{{item.other_id}}">移除</button>
+  </view>
+
+  <block wx:if="{{list.length>20}}">
+    <text wx:if="{{list.length==total}}" class='tips'>已无更多数据</text>
+    <text wx:else class='tips'>正在加载...</text>
+  </block>
+
+</view>

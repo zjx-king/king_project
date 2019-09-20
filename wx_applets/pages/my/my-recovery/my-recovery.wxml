@@ -1,0 +1,18 @@
+<view class="drafts">
+  <view class="drafts-operation {{!btnBolean ? 'operation' : ''}}">
+    <button hidden="{{btnBolean}}" bindtap="draftsEdit">编辑</button>
+    <button hidden="{{!btnBolean}}" bindtap="draftsCancel">取消</button>
+    <button hidden="{{!btnBolean}}" bindtap="draftsDelete">删除</button>
+  </view>
+  <view class="drafts-list" wx:for="{{draftsList}}" wx:key>
+    <checkbox hidden="{{!btnBolean}}" bindtap="checkedBox"></checkbox>
+    <view class="list-right" bindtap="goDetail">
+      <text>{{item.name}}</text>
+      <text>{{item.chapter}}</text>
+      <view>
+        <text>{{item.date}}</text><text>将在34小时后失效</text>
+      </view>
+      <text class="violation">此条包含违规内容，请修改后重新上传</text>
+    </view>
+  </view>
+</view>

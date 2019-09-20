@@ -1,0 +1,23 @@
+<!--pages/my/my-blacklist/my-blacklist.wxml-->
+<view class="ul" wx:if="{{list.length>0}}">
+  <view class="li" wx:for="{{list}}" wx:key bindtap="toPage" data-id="{{item.user_id}}">
+    <image src="{{item.user_image}}"></image>
+    <view>
+      <text class="p">{{item.user_name}}</text>
+      <text wx:if="{{item.user_introduce != null}}" class="span">{{item.user_introduce}}</text>
+      <text wx:else class="span">暂无签名</text>
+    </view>
+    <button hidden="{{item.user_id==myId}}" catchtap="add" data-index="{{index}}" data-id="{{item.user_id}}" wx:if="{{item.status=='关注'}}">关注</button>
+    <button hidden="{{item.user_id==myId}}" catchtap="del" data-index="{{index}}" data-id="{{item.user_id}}" wx:if="{{item.status=='已关注'}}">已关注</button>
+    <button hidden="{{item.user_id==myId}}" catchtap="del" data-index="{{index}}" data-id="{{item.user_id}}" wx:if="{{item.status=='互相关注'}}">互相关注</button>
+  </view>
+
+  <block wx:if="{{list.length>20}}">
+    <text wx:if="{{list.length==total}}" class='tips'>已无更多数据</text>
+    <text wx:else class='tips'>正在加载...</text>
+  </block>
+</view>
+
+<view class="default d-flex" wx:else>
+  <image src="/images/d-gz.png"></image>
+</view>

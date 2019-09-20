@@ -1,0 +1,19 @@
+<!--pages/my/my-phone/my-phone.wxml-->
+<view class="wrap">
+  <text class="h2">你好，</text>
+  <text class="h2">欢迎来到脑洞大大开</text>
+  <text class="p" wx:if="{{phoneBolean}}">未注册的手机，验证后即完成注册</text>
+  <text class="p" wx:else>验证码已发送至{{encryption}}</text>
+  <view class="phone-input">
+    <input maxlength="11" bindinput="phone" type="number" placeholder="输入手机号" value="{{phones}}"></input>
+    <image wx:if="{{phones.length>0}}" bindtap="deletePhone" src="/images/icon-close.png"/>
+  </view>
+  <view class="input">
+    <input class="li-input" maxlength="6" bindinput="num" type="number" placeholder="输入验证码" value="{{num}}"></input>
+    <image wx:if="{{num.length>0}}" bindtap="deleteCode" src="/images/icon-close.png"/>
+    <button class="li-btn" bindtap="send" disabled="{{dis}}">{{time}}</button>
+    <text wx:if="{{regRes}}" class="tip">验证码输入错误</text>
+  </view>
+
+  <button bindtap="submit" class="sub {{btn?'':'disable'}}">登录</button>
+</view>

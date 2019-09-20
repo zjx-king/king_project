@@ -1,0 +1,56 @@
+<view class="write">
+  <view class="tip" wx:if="{{drafts == 0 || drafts < 0}}">
+    <image src="/images/icon-warn.png"></image>
+    <text>草稿箱已满，直接上传或</text>
+    <text class="span" bindtap="goDrafts">管理草稿箱</text>
+  </view>
+  <view class="flex">
+    <view class="write-title" bindtap="goIntroduction">
+      <view class="write-tips">
+        <text>标题</text>
+        <text>{{title.length}}/30</text>
+      </view>
+      <text class=".p">{{title}}</text>
+    </view>
+    <view class="write-introduction" bindtap="goIntroduction">
+      <view class="write-tips">
+        <text>简介</text>
+        <text>{{introduction.length}}/500</text>
+      </view>
+      <text class=".p">{{introduction}}</text>
+    </view>
+    <view class="write-title" bindtap="goArticle">
+      <view class="write-tips">
+        <text>第一章标题（非必填）</text>
+        <text>{{articleTitle.length}}/30</text>
+      </view>
+      <text class=".p">{{articleTitle}}</text>
+    </view>
+    <view class="write-article" bindtap="goArticle">
+      <view class="write-tips">
+        <text>第一章（非必填）</text>
+        <text>{{article.length}}/500</text>
+      </view>
+      <text class=".p">{{article}}</text>
+    </view>
+    <view class="write-choice">
+      <view bindtap="goTime" class="choice-time">
+        <checkbox checked="{{checkBoolean}}" bindtap="checkSelect" disabled="{{!checkBoolean}}"></checkbox>
+        <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}" disabled="{{booleans}}">
+          <view>
+            <text>定时发送</text>
+          </view>
+          <view hidden="{{timeBolean}}">{{dateTimeArray1[0][dateTime1[0]]}}年{{dateTimeArray1[1][dateTime1[1]]}}月{{dateTimeArray1[2][dateTime1[2]]}}日{{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}发送</view>
+        </picker>
+      </view>
+      <view hidden="{{checkBoolean}}">
+        <text bindtap="goDrafs">存入草稿箱</text>
+      </view>
+    </view>
+
+    <view class="write-btn" bindtap="goRelease">
+      完成
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,19 @@
+<view class="write">
+ <view class="write-title">
+      <view class="write-tips">
+        <text>标题</text>
+        <text>{{title.length}}/30</text>
+      </view>
+      <textarea maxlength="30" bindinput="changeValue1" value="{{title}}" placeholder="给你的故事取个名字吧…"></textarea>
+    </view>
+  <view class="write-introduction">
+    <view class="write-tips">
+      <text>简介</text>
+      <text>{{introduction.length}}/500</text>
+    </view>
+    <textarea maxlength="500" bindinput="changeValue" value="{{introduction}}" placeholder="请开始你的故事…"></textarea>
+  </view>
+  <view class="write-btn" bindtap="goWrite">
+    完成
+  </view>
+</view>

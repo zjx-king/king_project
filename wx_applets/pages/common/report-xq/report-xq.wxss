@@ -1,0 +1,100 @@
+/* pages/common/report-xq/report-xq.wxss */
+
+page {
+  background: #f5f5f5;
+}
+
+.wrap {
+  padding: 0 30rpx;
+}
+
+.bt {
+  display: block;
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+textarea {
+  width: 93%;
+  height: 400rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  padding: 20rpx 3.5%;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #333;
+  line-height: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.btn {
+  text-align: center;
+  padding: 24rpx 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 44rpx;
+}
+.img{
+  width: 100%;
+  display: block;
+}
+.img-list{
+  float: left;
+}
+.img-btn {
+  border-radius: 8rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border: 1px dashed #999;
+  text-align: center;
+  display: inline-block;
+}
+
+.img-btn image {
+  width: 44rpx;
+  height: 40rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 35rpx;
+  margin-bottom: 15rpx;
+}
+
+.img-btn text {
+  display: block;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.list-item{
+  width: 160rpx;
+  height: 160rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  position: relative;
+}
+.list-item image{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+}
+
+.list-item .close{
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}

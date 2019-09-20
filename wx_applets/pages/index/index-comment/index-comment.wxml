@@ -1,0 +1,61 @@
+<wxs module="filters" src="../../../utils/dataFix.wxs"></wxs>
+
+<scroll-view scroll-y="true">
+  <view class="comment">
+    <view class="comment-list" wx:for="{{commentList}}" wx:key>
+      <view class="list-top">
+        <image src="{{item.user_image}}" />
+        <view>
+          <text>{{item.user_name}}</text>
+          <text>{{item.comment_add_time}}</text>
+        </view>
+      </view>
+      <view class="list-section">
+        {{item.comment_content}}
+      </view>
+      <view class="list-reply" bindtap="gocomDetail" wx:if="{{item.son_comment.length > 0}}" data-id="{{item.comment_id}}">
+        <view class="reply-list" wx:for="{{item.son_comment}}" wx:key>
+          <text>{{item.user_name}}：</text>
+          <text>{{item.comment_content}}</text>
+        </view>
+        <text wx:if="{{item.reply_num > 0}}">共{{item.reply_num}}条回复 ></text>
+      </view>
+      <view class="list-operation">
+        <view bindtap="fabulous" data-like="{{item.is_like}}" data-id="{{item.comment_id}}" data-i="{{index}}">
+          <image wx:if="{{item.is_like == 1}}" src="/images/index/zan_ok.png" />
+        <image wx:else src="/images/index/zan.png" />
+        <text wx:if="{{item.fabulous_num < 10000}}">{{item.fabulous_num}}</text>
+        <text wx:else>{{ filters.toFix(item.fabulous_num/10000) }}w</text>
+        </view>
+        <view bindtap="gocomDetail" data-id="{{item.comment_id}}">
+          <image src="/images/index/comment.png" />
+        <text wx:if="{{item.comment_num < 10000}}">{{item.comment_num}}</text>
+        <text wx:else bindtap="gocomDetail" data-id="{{item.comment_id}}">{{ filters.toFix(item.comment_num/10000) }}w</text>
+        </view>
+
+        
+      </view>
+    </view>
+    <view hidden='{{show}}'  class="tips" style='text-align:center;padding:20rpx 0;'>
+      没有更多了
+    </view>
+  </view>
+</scroll-view>
+
+
+<view class="publish" bindtap="goShow">
+  <view>评论本章</view>
+  <button>发表</button>
+</view>
+<view class="textareaComment" wx:if="{{publishBoolean}}">
+  <textarea placeholder="写评论" maxlength="150" bindinput="comChange" show-confirm-bar="{{false}}"></textarea>
+  <view>
+    <text class="{{comLen > 0 ? 'boldClass':''}}">{{comLen}}</text>
+    <text>/150</text>
+    <button bindtap="goHidden" disabled="{{btnBoolean}}">发表</button>
+  </view>
+</view>
+
+<view wx:if='{{commentList.length == 0}}' style='width:560rpx;height:500rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)'>
+  <image style='width:560rpx;height:500rpx;' src="/images/comment.png"/>
+</view>

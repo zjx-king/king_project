@@ -1,0 +1,148 @@
+/* pages/index/search-user/search-user.wxss */
+/* 搜索头部 */
+
+.search-header {
+  /* position: relative; */
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 5;
+}
+.search-header view{
+  width: 90%;
+  height: 72rpx;
+  display: -webkit-flex;
+  align-items: center;
+  background-color: rgba(142,142,147,0.12);
+  margin-left: 5%; 
+  padding: 0 16rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  transition: 0.5s;
+}
+.search-header .search-left {
+  width: 75%;
+}
+.search-header image {
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle;
+}
+.search-header input {
+  flex: 1;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 20rpx;
+  caret-color:rgba(142,112,55,1);
+  font-size:34rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  line-height:48rpx;
+}
+.search-header button {
+  position: absolute;
+  right: 5%;
+  bottom: 11rpx;
+  display: inline-block;
+  padding: 0;
+  line-height: inherit;
+  font-size:34rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:48rpx;
+  background-color: #fff;
+  visibility: hidden;
+  transition: 0.2s;
+  background-color: transparent;
+}
+.search-header .search-btn {
+ visibility: visible;
+}
+button::after{
+  border: none;
+}
+
+/* 搜索提示 */
+.search-tips {
+  display: none;
+}
+.hot-title {
+  display: block;
+  font-size:28rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(142,112,55,1);
+  line-height:40rpx;
+  margin-top: 56rpx;
+  margin-left: 5%;
+}
+.hot-title image {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  float: right;
+  margin-right: 50rpx;
+}
+.search-hot {
+  margin-left: 5%;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+.search-hot text {
+  display: block;
+  margin-right: 60rpx;
+  font-size:28rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:40rpx;
+  margin-top: 40rpx;
+}
+
+scroll-view {
+  width: 100%;
+}
+/* 搜索到的用户列表 */
+/* .search-userList{
+  display: none;
+}
+.listBlock {
+  display: block;
+} */
+.userList {
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 25rpx;
+  box-sizing: border-box;
+  border-bottom:2rpx solid rgba(188,187,193,0.3);
+}
+.userList-left image{
+  width: 84rpx;
+  height: 84rpx;
+  margin-right: 30rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.userList-left text {
+  font-size:34rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:44rpx;
+}
+.userList-right image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+  vertical-align: middle;
+}
+.userList-right text {
+  font-size:30rpx;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:40rpx;
+}

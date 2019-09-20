@@ -1,0 +1,62 @@
+<!--pages/index/index-search/index-search.wxml-->
+
+<!-- 搜索头部 -->
+<view class='search-header'>
+  <view>
+    <image mode="aspectFill" src="/images/index/search.png" />
+    <input bindblur='outFo' value='{{searchText}}' maxlength="30" bindinput='watchInput' />
+    <image mode="aspectFill" hidden="{{cancelBoolean}}" bindtap="cancel" src="/images/close.png" />
+  </view>
+  <button bindtap='search'>搜索</button>
+</view>
+
+<!-- 搜索提示 -->
+<view class="{{tip == false ? 'search-tips':' '}}">
+  <view class='hot-title'>热门搜索</view>
+  <view class='search-hot'>
+    <text wx:for = "{{searchHot}}" wx:key bindtap='clickHot' data-h="{{item}}">{{item}}</text>
+  </view>
+  <view class='hot-title'>
+    历史搜索
+    <image mode="aspectFill" src='/images/index/delete.png' bindtap='deletes'/>
+  </view>
+  <view class='search-hot'>
+    <text wx:for = "{{searchRecord}}" wx:key bindtap='clickHot' data-h="{{item}}">{{item}}</text>
+  </view>
+</view>
+
+<!--垂直滚动，这里必须设置高度-->
+<scroll-view scroll-y="true">
+
+<!-- 搜索到的用户 -->
+<view class="search-content {{user == true ? 'searchUser':' '}}">
+  <view class='search-user' wx:if="{{imgs.length>0}}">
+    <view class='user-left'>
+      <view wx:for="{{imgs}}" wx:key>
+        <image mode="aspectFill" src="{{item.user_image}}"/>
+      </view>
+    </view>
+    <view class='user-right' bindtap='clickState'>
+      相关用户{{user_count}}+
+    </view>
+    
+  </view>
+  
+
+  <!-- 搜索到的列表 -->
+  <view class='search-list' wx:for="{{searchList}}"  wx:key wx:if="{{item!=''}}" bindtap="goDetail" data-id="{{item.brainhole_id}}">
+    <text>{{item.brainhole_title}}</text><text>已有{{item.article_chapter}}章</text>
+    <text wx:if="{{item.chapter}}">第{{item.chapter}}章   {{item.article_title}}</text>
+    <text>{{item.brainhole_description}}</text>
+  </view>
+</view>
+
+
+
+</scroll-view>
+<view hidden='{{show}}'  class="tips" style='text-align:center;padding:20rpx 0;background-color:rgba(245,245,245,1);'>
+  没有更多了
+</view>
+<view wx:if='{{imgs.length == 0 && searchList.length == 0 && !tip}}' style='width:560rpx;height:500rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)'>
+  <image style='width:560rpx;height:500rpx;' src="/images/nosearch.png"/>
+</view>

@@ -1,0 +1,27 @@
+<!--pages/message/msg-comment/msg-comment.wxml-->
+<view class="ul" wx:if="{{list.length>0}}">
+  <view class="li  {{item.message_is_read==1?'active':''}}" wx:for="{{list}}" wx:key bindtap="toPage1" data-comment="{{item.comment_top_id}}" data-article="{{item.article_id}}">
+    <view class="left">
+      <view class="user">
+        <image class="tx" catchtap="toPage2" data-id="{{item.user_id}}" wx:if="{{item.user_image}}" mode="aspectFill" src="{{item.user_image}}"></image>
+        <view class="h3">
+          <text class="span" catchtap="toPage2" data-id="{{item.user_id}}">{{item.user_name}} </text>
+          <text wx:if="{{item.comment_top_id==0}}">评论了你的脑洞</text>
+          <text wx:else>回复了你的评论</text>
+        </view>
+        <text class="time">{{item.year}}年{{item.month}}月{{item.day}}日  {{item.time}}</text>
+      </view>
+      <text class="p">{{item.message_comment}}</text>
+    </view>
+    <image class="right" wx:if="{{item.brainhole_image}}" mode="aspectFill" src="{{item.brainhole_image}}"></image>
+  </view>
+
+  <block wx:if="{{list.length>20}}">
+    <text wx:if="{{list.length==total}}" class='tips'>已无更多数据</text>
+    <text wx:else class='tips'>正在加载...</text>
+  </block>
+</view>
+
+<view class="default d-flex" wx:else>
+  <image src="/images/msg/pl.png"></image>
+</view>

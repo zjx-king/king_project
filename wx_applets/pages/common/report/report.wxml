@@ -1,0 +1,8 @@
+<!--pages/common/report/report.wxml-->
+<text class='bt'>请选择投诉该用户的原因</text>
+<view class='ul'>
+  <view class='li' wx:for="{{list}}" wx:key data-id="{{item.report_id}}" bindtap='toPage'>
+    <text>{{item.report_name}}</text>
+    <image src='/images/icon-right.png'></image>
+  </view>
+</view>

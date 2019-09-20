@@ -1,0 +1,104 @@
+{
+  "pages": [
+    "pages/index/home/home",
+    "pages/index/index-search/index-search",
+    "pages/index/search-user/search-user",
+    "pages/my/my-index/my-index",
+    "pages/my/my-mine/my-mine",
+    "pages/login/login",
+    "pages/message/msg-index/msg-index",
+    "pages/nd/nd-index/nd-index",
+    "pages/common/report/report",
+    "pages/common/report-xq/report-xq",
+    "pages/index/index-detail/index-detail",
+    "pages/index/index-read/index-read",
+    "pages/nd/nd-user/nd-user",
+    "pages/nd/nd-more/nd-more",
+    "pages/edit/edit-write/edit-write",
+    "pages/edit/edit-branch/edit-branch",
+    "pages/edit/editor-index/editor-index",
+    "pages/edit/edit-introduction/edit-introduction",
+    "pages/edit/edit-article/edit-article",
+    "pages/edit/editor-label/editor-label",
+    "pages/message/msg-like/msg-like",
+    "pages/message/msg-comment/msg-comment",
+    "pages/message/msg-chase/msg-chase",
+    "pages/message/msg-attention/msg-attention",
+    "pages/message/msg-system/msg-system",
+    "pages/message/msg-invite/msg-invite",
+    "pages/index/index-comment/index-comment",
+    "pages/index/comment-detail/comment-detail",
+    "pages/my/my-setting/my-setting",
+    "pages/my/my-safe/my-safe",
+    "pages/my/my-phone/my-phone",
+    "pages/my/my-phoneNew/my-phoneNew",
+    "pages/my/my-code/my-code",
+    "pages/my/my-personal/my-personal",
+    "pages/my/my-drafts/my-drafts",
+    "pages/my/my-recovery/my-recovery",
+    "pages/my/my-recovery-detail/my-recovery-detail",
+    "pages/my/my-help/my-help",
+    "pages/nd/nd-catalog/nd-catalog",
+    "pages/nd/nd-catalog-branch/nd-catalog-branch",
+    "pages/login/login-phone/login-phone",
+    "pages/my/my-level/my-level",
+    "pages/my/my-pact/my-pact",
+    "pages/my/my-blacklist/my-blacklist",
+    "pages/my/my-fans/my-fans",
+    "pages/my/my-atten/my-atten",
+    "pages/my/my-other/my-other"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "脑洞大大开",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "tabBar": {
+    "custom": false,
+    "backgroundColor": "#F7F7F7",
+    "color": "#999999",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "iconPath": "images/tabs/tab1.png",
+        "selectedIconPath": "images/tabs/tab11.png",
+        "pagePath": "pages/index/home/home",
+        "text": "发现"
+      },
+      {
+        "iconPath": "images/tabs/tab2.png",
+        "selectedIconPath": "images/tabs/tab22.png",
+        "pagePath": "pages/nd/nd-index/nd-index",
+        "text": "脑洞"
+      },
+      {
+        "iconPath": "images/tabs/tab3.png",
+        "selectedIconPath": "images/tabs/tab3.png",
+        "pagePath": "pages/edit/editor-index/editor-index"
+      },
+      {
+        "iconPath": "images/tabs/tab4.png",
+        "selectedIconPath": "images/tabs/tab44.png",
+        "pagePath": "pages/message/msg-index/msg-index",
+        "text": "消息"
+      },
+      {
+        "iconPath": "images/tabs/tab5.png",
+        "selectedIconPath": "images/tabs/tab55.png",
+        "pagePath": "pages/my/my-index/my-index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "点击度确定"
+    }
+  }
+}

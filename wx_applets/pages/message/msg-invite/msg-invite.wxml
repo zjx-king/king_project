@@ -1,0 +1,22 @@
+<!--pages/message/msg-invite/msg-invite.wxml-->
+<view class="ul" wx:if="{{list.length>0}}">
+  <view class="li  {{item.message_is_read==1?'active':''}}" wx:for="{{list}}" wx:key>
+    <image class="close" src="/images/close.png"></image>
+    <view class="user">
+      <image class="tx" src="/images/index/timg.png"></image>
+      <text class="name">{{item.name}}</text>
+      <text>邀请你来续写脑洞</text>
+    </view>
+    <text class="h2">{{item.title}} </text>
+    <text class="time">{{item.time}}</text>
+    <view class="btn">去续写</view>
+  </view>
+  <block wx:if="{{list.length>20}}">
+    <text wx:if="{{list.length==total}}" class='tips'>已无更多数据</text>
+    <text wx:else class='tips'>正在加载...</text>
+  </block>
+</view>
+
+<view class="default d-flex" wx:else>
+  <image src="/images/d-yq.png"></image>
+</view>

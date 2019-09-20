@@ -1,0 +1,63 @@
+<wxs module="filters" src="../../../utils/dataFix.wxs"></wxs>
+
+<view class="detail">
+  <view class="detail-top">
+    <view class="top-left" style="background-image:url({{detail.brainhole_image}});background-size:cover;">
+      <view style="background-image:url({{detail.brainhole_tag_icon}});background-size:cover;">
+      </view>
+    </view>
+    <view class="top-right">
+      <text class="rightName">{{detail.brainhole_title}}</text>
+      <view>
+        <image src="/images/index/hot2.png"/>
+        <text wx:if="{{detail.brainhole_hits < 10000}}">{{detail.brainhole_hits}}</text>
+        <text wx:else>{{ filters.toFix(detail.brainhole_hits/10000) }}w</text>
+      </view>
+      <view data-id='{{detail.user_id}}' bindtap="goOthers">
+        <image src="{{detail.user_image}}"/>
+        <text>{{detail.user_name}}</text>
+      </view>
+      <view wx:if="{{detail.is_follow == 0}}" bindtap="collection">
+        <image src="/images/index/zhuigeng.png"/>
+        <text>追更</text>
+      </view>
+      <view wx:else bindtap="collection">
+        <image src="/images/index/yzg.png"/>
+        <text>已追更</text>
+      </view>
+    </view>
+  </view>
+  <view class="detail-nav">
+    <view bindtap="goCatalog">
+      <image src="/images/index/nav1.png"/>
+      <text>目录</text>
+    </view>
+    <view>
+      <image src="/images/index/nav2.png"/>
+      <text wx:if="{{detail.brainhole_like < 10000}}">{{detail.brainhole_like}}</text>
+      <text wx:else>{{ filters.toFix(detail.brainhole_like/10000) }}w</text>
+    </view>
+    <view>
+      <image src="/images/index/nav3.png"/>
+      <text wx:if="{{detail.brainhole_comment < 10000}}">{{detail.brainhole_comment}}</text>
+      <text wx:else>{{ filters.toFix(detail.brainhole_comment/10000) }}w</text>
+    </view>
+    <view>
+      <image src="/images/index/na4.png"/>
+      <button open-type='share'>分享</button>
+    </view>
+  </view>
+  <view class="detail-brief">
+    <text>简介</text>
+    <text class="{{isFold?'hide':'show'}}">{{detail.brainhole_description}}</text>
+    <text bindtap="showAll" wx:if="{{opacityHeight != hideHeight && isFold}}">展开</text>
+    <text bindtap="showAll" wx:if="{{opacityHeight != hideHeight && !isFold}}">收起</text>
+    
+  </view>
+  
+</view>
+<text class="opacity">{{detail.brainhole_description}}</text>
+<view class="btn">
+      <button bindtap="goRead">开始阅读</button>
+    </view>
+    

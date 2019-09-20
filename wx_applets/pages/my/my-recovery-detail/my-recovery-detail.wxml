@@ -1,0 +1,39 @@
+<view class="write">
+  <view class="drafs-tips">
+    <image src="/images/initiate/caution.png" />
+    <text>请修改红色违规内容后重新发布</text>
+  </view>
+  <view class="flex">
+    <view class="violation">
+       <view class="write-tips">
+        <text>违规内容</text>
+      </view>
+      <textarea value="{{violation}}" disabled></textarea>
+    </view>
+    <view class="write-title" bindtap="goArticle">
+      <view class="write-tips">
+        <text>标题</text>
+        <text>{{title.length}}/30</text>
+      </view>
+      <textarea maxlength="30" value="{{title}}" disabled></textarea>
+    </view>
+    <view class="write-introduction" bindtap="goIntroduction">
+      <view class="write-tips">
+        <text>简介</text>
+        <text>{{introduction.length}}/500</text>
+      </view>
+      <textarea maxlength="500" disabled value="{{introduction}}"></textarea>
+    </view>
+    <view class="write-article" bindtap="goArticle">
+      <view class="write-tips">
+        <text>第一章（非必填）</text>
+        <text>{{article.length}}/500</text>
+      </view>
+      <textarea maxlength="500" disabled value="{{article}}"></textarea>
+    
+    </view>
+  </view>
+  <view class="write-btn" bindtap="goRelease">
+    发布
+  </view>
+</view>

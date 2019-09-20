@@ -1,0 +1,37 @@
+<!--pages/nd/nd-list/nd-list.wxml-->
+<wxs module="filters" src="../../../utils/dataFix.wxs"></wxs>
+
+<scroll-view scroll-y="true">
+  <view class="ul">
+    <view class="li" wx:for="{{list}}" wx:key>
+      <view class="left label" bindtap="goDetail" data-id="{{item.brainhole_id}}">
+        <image class="img" mode="aspectFill" src='{{item.brainhole_image}}'></image>
+        <view style="background-image:url({{item.brainhole_tag_icon}});background-size:cover;">
+        </view>
+      </view>
+      <view class="right">
+        <view class="flex" bindtap="goDetail" data-id="{{item.brainhole_id}}">
+          <view class="w70">
+            <text class="h2">{{item.brainhole_title}}</text>
+            <text class="span">发布时间 {{item.brainhole_addtime}}</text>
+          </view>
+          <view>
+            <view class="hot">
+              <image src='/images/index/hot2.png'></image>
+              <text class="p" wx:if="{{item.brainhole_hits < 10000}}">{{item.brainhole_hits}}</text>
+              <text class="p" wx:else>{{ filters.toFix(11000/10000) }}w</text>
+            </view>
+            <text class="span">已有{{item.article_chapter}}章</text>
+          </view>
+        </view>
+        <view class="user" data-id='{{item.user_id}}' bindtap="goOthers">
+          <image src='{{item.user_image}}'></image>
+          <text>{{item.user_name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view hidden='{{show}}' class="tips" style='text-align:center;padding:20rpx 0;'>
+  没有更多了
+</view>

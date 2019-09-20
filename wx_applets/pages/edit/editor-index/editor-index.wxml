@@ -1,0 +1,22 @@
+
+<view class="user">
+  <image src="{{day.user_image}}"></image>
+  <text>今天是你加入脑洞大大开的第{{day.day}}天</text>
+</view>
+
+<view class="bottom">
+  <view class="item" bindtap="toPage">
+    <view>
+      <image src="/images/icon-dp.png"></image>
+    </view>
+    <text>写短篇</text>
+    <text>（50-500字）</text>
+  </view>
+  <view class="item" bindtap="toastApp">
+    <view>
+      <image src="/images/icon-cp.png"></image>
+    </view>
+    <text>写长篇</text>
+    <text>（501-15000字）</text>
+  </view>
+</view>

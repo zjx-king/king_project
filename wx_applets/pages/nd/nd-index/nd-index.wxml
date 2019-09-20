@@ -1,0 +1,85 @@
+<!--pages/nd/nd-index/nd-index.wxml-->
+<wxs module="filters" src="../../../utils/dataFix.wxs"></wxs>
+
+<view class="top">
+  <text bindtap="tab" data-id='0' class="{{tab?'':'active'}}">追更</text>
+  <text bindtap="tab" data-id='1' class="{{tab?'active':''}}">关注</text>
+</view>
+
+
+  <view class="tab tab1" hidden="{{tab}}">
+  <scroll-view scroll-y="true">
+    <view class="zg-ul">
+      <view class="li" wx:for="{{zgList}}" wx:key bindtap="goDetail" data-brainhole_id="{{item.brainhole_id}}" data-previous_article_id="{{item.previous_article_id}}" data-article_chapter="{{item.article_chapter}}">
+        <view class="left">
+          <text class="h2">{{item.brainhole_title}}</text>
+          <text class="span">上次看到第{{item.previous_seeing_article_id}}章  共有{{item.article_chapter}}章</text>
+        </view>
+        <view class="right">
+          <image src='/images/index/hot2.png'></image>
+          <text class="span" wx:if="{{item.brainhole_hits < 10000}}">{{item.brainhole_hits}}</text>
+          <text class="span" wx:else>{{ filters.toFix(item.brainhole_hits/10000) }}w</text>
+        </view>
+      </view>
+    </view>
+
+    
+
+</scroll-view>
+<view class="bottom" bindtap="toPage" data-url="/pages/nd/nd-more/nd-more">
+      <text>发现更多感兴趣的脑洞</text>
+      <image src='/images/icon-right.png'></image>
+    </view>
+  </view>
+
+  <view class="tab tab2" hidden="{{!tab}}">
+  <scroll-view scroll-y="true">
+    <view class="gz-ul">
+      <view class="li" wx:for="{{gzList}}" wx:key>
+        <view class="user" data-id='{{item.user_id}}' bindtap="goOthers">
+          <image class="tx" src='{{item.user_image}}'></image>
+          <text class="h3">{{item.user_name}}</text>
+          <text class="span">{{item.add_time}}</text>
+        </view>
+        <text class="h5" wx:if="{{item.draft_type == 1}}">发布了脑洞</text>
+        <text class="h5" wx:else>填写了脑洞</text>
+        <view class="body" bindtap="goLike" data-brainhole_id="{{item.brainhole_id}}" data-draft_type="{{item.draft_type}}" data-article_id="{{item.article_id}}">
+          <view class="flex">
+            <text class="h2">{{item.brainhole_title}}</text>
+            <view>
+              <image src='/images/index/hot2.png'></image>
+              <text class="span" wx:if="{{item.brainhole_hits < 10000}}">{{item.brainhole_hits}}</text>
+              <text class="span" wx:else>{{ filters.toFix(item.brainhole_hits/10000) }}w</text>
+            </view>
+          </view>
+          <text class="h4" wx:if="{{item.article_chapter}}">第{{item.article_chapter}}章：{{item.article_title}}</text>
+          <text class="p" wx:if="{{item.brainhole_description}}">{{item.brainhole_description}}</text>
+          <text class="p" wx:if="{{item.article_content}}">{{item.article_content}}</text>
+        </view>
+      </view>
+    </view>
+
+    
+
+</scroll-view>
+<view class="bottom" bindtap="toPage" data-url="/pages/nd/nd-user/nd-user">
+      <text>发现更多有趣的灵魂</text>
+      <view class="flex">
+        <view class="tx-list" wx:for="{{user_imageList}}" wx:key>
+          <image src='{{item.user_image}}'></image>
+        </view>
+        <image class="icon" src='/images/icon-right.png'></image>
+      </view>
+
+    </view>
+  </view>
+
+<!-- <view hidden='{{show}}' style='text-align:center;padding:20rpx 0;'>
+  已没有更多数据
+</view> -->
+<view wx:if='{{zgList.length == 0 && !tab}}' style='width:560rpx;height:500rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)'>
+  <image style='width:560rpx;height:500rpx;' mode="aspectFill" src="/images/zg.png" />
+</view>
+<view wx:if='{{gzList.length == 0 && tab}}' style='width:560rpx;height:500rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)'>
+  <image style='width:560rpx;height:500rpx;' mode="aspectFill" src="/images/d-gz.png" />
+</view>

@@ -1,0 +1,178 @@
+<wxs module="filters" src="../../../utils/dataFix.wxs"></wxs>
+
+<view class="head">
+  <image class="tx" src="{{userInfo.user_image}}"></image>
+  <text class="h2">{{userInfo.user_name}}</text>
+  <text wx:if="{{userInfo.user_introduce != null}}" class="p">{{userInfo.user_introduce}}</text>
+  <text wx:else class="p">暂无签名</text>
+  <view class="flex">
+    <view class="item" bindtap="toPage" data-url="/pages/my/my-atten/my-atten?user_id={{userInfo.user_id}}&type=0">
+      <text class="h3">{{userInfo.user_follow_num}}</text>
+      <text class="span">关注</text>
+    </view>
+    <view class="item" bindtap="toPage" data-url="/pages/my/my-fans/my-fans?user_id={{userInfo.user_id}}&type=0">
+      <text class="h3">{{userInfo.user_fans_num}}</text>
+      <text class="span">粉丝</text>
+    </view>
+    <view class="item">
+      <text class="h3">{{userInfo.like_run}}</text>
+      <text class="span">收到的喜欢与追更</text>
+    </view>
+  </view>
+</view>
+
+<view class="nav">
+  <view data-cur="{{index}}" wx:for="{{nav}}" wx:key bindtap="navTab" class="item {{cur==index?'active':''}}">{{item.name}} </view>
+</view>
+
+<view hidden="{{cur!==0}}">
+  <view class="tab">
+    <view class="tab-nav">
+      <view>
+        <text data-id="1" bindtap="tabPage" class="{{tabPage?'active':''}}">我发布的</text>
+        <text data-id="2" bindtap="tabPage" class="{{tabPage?'':'active'}}">我参与的</text>
+      </view>
+    </view>
+
+    <view hidden="{{!tabPage}}">
+      <scroll-view scroll-y bindscrolltolower="lower0" style="height:{{height - h1}}px" wx:if="{{list0.length>0}}">
+        <view class="ul">
+          <view class="li" wx:for="{{list0}}" wx:key bindtap="toPage1" data-brainhole="{{item.brainhole_id}}" data-article="{{item.article_id}}">
+            <view class="time">
+              <text class="p">{{item.day}}</text>
+              <text class="span">{{filters.num(item.month)}}月</text>
+            </view>
+            <view class="cont">
+              <!-- <image class="icon" src="/images/my/idx3.png"></image> -->
+              <view class="flex">
+                <text class="h2">{{item.brainhole_title}}</text>
+                <view class="hot">
+                  <image src="/images/index/hot2.png"></image>
+                  <text>{{item.brainhole_hits}}</text>
+                  <text>{{item.article_hits}}</text>
+                </view>
+              </view>
+              <text class="h3">{{item.subTitle}}</text>
+              <text class="p">{{item.brainhole_description}}</text>
+            </view>
+          </view>
+
+          <block wx:if="{{list0.length>10}}">
+            <text wx:if="{{list0.length==total0}}" class='tip'>已无更多数据</text>
+            <text wx:else class='tip'>正在加载...</text>
+          </block>
+        </view>
+      </scroll-view>
+
+      <view class="default" wx:else>
+        <image src="/images/d-mine.png"></image>
+      </view>
+    </view>
+
+    <view hidden="{{tabPage}}">
+      <scroll-view scroll-y bindscrolltolower="lower1" style="height:{{height - h1}}px" wx:if="{{list1.length>0}}">
+        <view class="ul">
+          <view class="li" wx:for="{{list1}}" wx:key bindtap="toPage1" data-brainhole="{{item.brainhole_id}}" data-article="{{item.article_id}}">
+            <view class="time">
+              <text class="p">{{item.day}}</text>
+              <text class="span">{{filters.num(item.month)}}月</text>
+            </view>
+            <view class="cont">
+              <view class="flex">
+                <text class="h2">{{item.brainhole_title}}</text>
+                <view class="hot">
+                  <image src="/images/index/hot2.png"></image>
+                  <text>{{item.brainhole_hits}}</text>
+                  <text>{{item.article_hits}}</text>
+                </view>
+              </view>
+              <text wx:if='{{item.article_chapter}}' class="h3">第{{item.article_chapter}}章：{{item.article_title}}</text>
+              <text class="p">{{item.article_content}}</text>
+            </view>
+          </view> 
+
+          <block wx:if="{{list1.length>10}}">
+            <text wx:if="{{list1.length==total1}}" class='tip'>已无更多数据</text>
+            <text wx:else class='tip'>正在加载...</text>
+          </block>
+        </view>
+      </scroll-view>
+
+      <view class="default" wx:else>
+        <image src="/images/d-mine.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{cur!==1}}">
+  <scroll-view wx:if="{{list3.length>0}}" scroll-y bindscrolltolower="lower3" style="height:{{height}}px">
+    <view class="tab">
+      <view class="ul">
+        <view class="li" wx:for="{{list3}}" wx:key bindtap="toPage1" data-brainhole="{{item.brainhole_id}}" data-article="{{item.article_id}}">
+          <view class="time">
+            <text class="p">{{item.day}}</text>
+            <text class="span">{{filters.num(item.month)}}月</text>
+            <image class="zg" src="/images/my/idx1.png"></image>
+          </view>
+          <view class="cont">
+            <view class="flex">
+              <text class="h2">{{item.brainhole_title}}</text>
+              <view class="hot">
+                <image src="/images/index/hot2.png"></image>
+                <text>{{item.brainhole_hits}}</text>
+                <text>{{item.article_hits}}</text>
+              </view>
+            </view>
+            <text wx:if='{{item.previous_seeing_article_id}}' class="h3">第{{item.previous_seeing_article_id}}章：{{item.article_title}}</text>
+            <text class="p">{{item.brainhole_description}}</text>
+            <text class="p">{{item.article_content}}</text>
+          </view>
+        </view>
+        <block wx:if="{{list3.length>10}}">
+            <text wx:if="{{list3.length==total3}}" class='tip'>已无更多数据</text>
+            <text wx:else class='tip'>正在加载...</text>
+          </block>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="default" wx:else>
+    <image src="/images/d-mine.png"></image>
+  </view>
+</view>
+
+
+<view hidden="{{cur!==2}}">
+  <scroll-view scroll-y bindscrolltolower="lower2" style="height:{{height}}px" wx:if="{{list2.length>0}}">
+    <view class="tab">
+      <view class="ul">
+        <view class="li" wx:for="{{list2}}" wx:key bindtap="toPage1" data-brainhole="{{item.brainhole_id}}" data-article="{{item.article_id}}">
+          <view class="time">
+            <text class="p">{{item.day}}</text>
+            <text class="span">{{filters.num(item.month)}}月</text>
+            <image class="like" src="/images/my/idx2.png"></image>
+          </view>
+          <view class="cont">
+            <view class="flex">
+              <text class="h2">{{item.brainhole_title}}</text>
+              <view class="hot">
+                <image src="/images/index/hot2.png"></image>
+                <text>{{item.brainhole_hits}}</text>
+                <text>{{item.article_hits}}</text>
+              </view>
+            </view>
+            <text wx:if='{{item.article_chapter}}' class="h3">第{{item.article_chapter}}章：{{item.article_title}}</text>
+            <text class="p">{{item.article_content}}</text>
+          </view>
+        </view>
+        <block wx:if="{{list2.length>10}}">
+            <text wx:if="{{list2.length==total2}}" class='tip'>已无更多数据</text>
+            <text wx:else class='tip'>正在加载...</text>
+          </block>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="default" wx:else>
+    <image src="/images/d-mine.png"></image>
+  </view>
+</view>

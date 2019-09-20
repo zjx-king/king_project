@@ -1,0 +1,36 @@
+<view class="top" bindtap="goLogin" hidden="{{isLogin}}">
+  <image class="tx" src="/images/my/login.png"></image>
+  <button>登录/注册</button>
+  <text class="span">点击登录，享受更多精彩信息</text>
+</view>
+
+<view class="top" hidden="{{!isLogin}}" bindtap="toPage" data-url="../my-personal/my-personal">
+  <image class="tx" src="{{userInfo.user_image}}"></image>
+  <view class="user">
+    <view class="p">{{userInfo.user_name}}
+      <image catchtap="toPage" wx:if="{{userInfo.user_level}}" data-url="../my-level/my-level" src="/images/my/v{{userInfo.user_level}}.png"></image>
+    </view>
+  </view>
+  <!-- <text class="span">编辑个人签名</text> -->
+  <text wx:if="{{userInfo.user_introduce != null}}" class="span">{{userInfo.user_introduce}}</text>
+  <text wx:else class="span">点击编辑签名</text>
+</view>
+
+<view class="ul">
+  <view class="li" bindtap="toPage" data-url="{{item.url}}?id={{userInfo.user_id}}" wx:for="{{list}}" wx:key>
+    <text>{{item.name}}</text>
+    <image src="/images/icon-right.png"></image>
+  </view>
+</view>
+
+<view class="share-toast {{toastBolean?'show':''}}">
+  <view class="share">
+    <view>
+      <image bindtap="cancleShare" src="/images/cancel.png" />
+    </view>
+    <button class="s-btn" plain="true" bindtap="share" open-type="share"></button>
+    <image src="/images/wechat.png" />
+    <text>分享给微信好友</text>
+    <text>每天首次分享可得经验值：5</text>
+  </view>
+</view>

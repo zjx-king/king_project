@@ -1,0 +1,101 @@
+<wxs module="filters" src="../../../utils/dataFix.wxs"></wxs>
+
+<view class="home">
+  <swiper next-margin="35rpx" previous-margin="35rpx" bindchange="change">
+    <swiper-item>
+      <view class="home-plate">
+        <view class="plate-header">
+          <text>超级脑洞</text>
+          <view bindtap="goChange">
+            <image mode="aspectFill" src="/images/index/change.png" />
+            <text>换一批</text>
+          </view>
+        </view>
+        <text class="plate-new" wx:if="{{hole == null}}">脑洞君正在快马加鞭地赶来</text>
+        <text class="plate-new" wx:else>当下最热脑洞·每日更新</text>
+        <view class="plate-img" bindtap="goDetail" data-id="{{hole.brainhole_id}}">
+          <image mode="aspectFill" src="{{hole.brainhole_image}}" />
+          <view style="background-image:url({{hole.brainhole_tag_icon}});background-size:cover;">
+          </view>
+        </view>
+        <view class="plate-header plate-hot" bindtap="goDetail" data-id="{{hole.brainhole_id}}">
+          <text class="title">{{hole.brainhole_title}}</text>
+          <view wx:if="{{hole.brainhole_hits}}">
+            <image mode="aspectFill" src="/images/index/hot2.png"></image>
+            <text wx:if="{{hole.brainhole_hits < 10000}}">{{hole.brainhole_hits}}</text>
+            <text wx:else>{{ filters.toFix(hole.brainhole_hits/10000) }}w+</text>
+          </view>
+        </view>
+        <text class="plate-new" bindtap="goDetail" data-id="{{hole.brainhole_id}}">{{hole.brainhole_description}}</text>
+        <view wx:if="{{hole == null}}" style='width:560rpx;height:500rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)'>
+          <image mode="aspectFill" style='width:560rpx;height:500rpx;' src="/images/ndj.png" />
+        </view>
+      </view>
+
+    </swiper-item>
+    <swiper-item>
+      <view class="home-plate">
+        <view class="plate-header">
+          <text>随便看看</text>
+        </view>
+        <text class="plate-new">没事就来翻一翻·实时更新</text>
+        <view class="palte-bg" bindtap="goList" data-type="1">
+          <image src="/images/index/photo.png" />
+          <view>
+            <text>长篇脑洞</text>
+            <text>Get作者脑洞，参与长篇创作，你就是整条gai脑洞最大的那个仔！</text>
+          </view>
+        </view>
+        <view class="palte-bg" bindtap="goList" data-type="2">
+          <image src="/images/index/photo3.png" />
+          <view>
+            <text>短篇脑洞</text>
+            <text>灵光乍现，来一个说写就写的脑洞吧！</text>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="home-plate">
+        <view class="plate-header">
+          <text>为你推荐</text>
+          <view bindtap="changeBrain">
+            <image mode="aspectFill" src="/images/index/change.png" />
+            <text>换一批</text>
+          </view>
+        </view>
+        <text class="plate-new" wx:if="{{brainhole.length == 0}}">脑洞君正在快马加鞭地赶来</text>
+        <text class="plate-new" wx:else>基于你感兴趣的标签·每日更新</text>
+        <view class="imgList">
+          <view wx:for="{{brainhole}}" wx:key style="background-image:url({{item.brainhole_image}});background-size:cover;" bindtap="goDetail" data-id="{{item.brainhole_id}}">
+            <text>{{item.brainhole_title}}</text>
+            <view style="background-image:url({{item.brainhole_tag_icon}});background-size:cover;border-radius:0">
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{brainhole.length == 0}}" style='width:560rpx;height:500rpx;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)'>
+          <image mode="aspectFill" style='width:560rpx;height:500rpx;' src="/images/ndj.png" />
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="home-plate">
+        <view class="plate-header">
+          <text>热门活动</text>
+        </view>
+        <text class="plate-new">脑洞君正在快马加鞭地赶来</text>
+        <view class="hot-img">
+          <image mode="aspectFill" src="/images/index/hot.png" />
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class="search-img" bindtap="goSearch">
+    <image mode="aspectFill" src="/images/index/search2.png" />
+  </view>
+  <view class="border-box">
+    <view mode="aspectFill" class="border-small" style="left:{{left}};transition:0.4s;">
+    </view>
+  </view>
+
+</view>

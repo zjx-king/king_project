@@ -1,0 +1,76 @@
+.ul {
+  border-top: 1rpx solid #eee;
+}
+
+.li {
+  border-bottom: 10rpx solid #eee;
+  padding: 30rpx;
+  position: relative;
+}
+
+.li .close {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  width: 18rpx;
+  height: 18rpx;
+  z-index: 99;
+}
+
+.li .user {
+  position: relative;
+  padding-left: 70rpx;
+  padding-bottom: 40rpx;
+}
+
+.li .user text {
+  display: inline-block;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #999;
+  line-height: 40rpx;
+}
+
+.li .user text.name {
+  color: #333;
+  margin-right: 10rpx;
+}
+
+.li  .tx {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.li  .h2 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 42rpx;
+  padding-bottom: 40rpx;
+}
+
+.li .time {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 34rpx;
+}
+
+.li  .btn {
+  position: absolute;
+  right: 30rpx;
+  bottom: 20rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 2rpx 2rpx 0px 0px rgba(51, 51, 51, 1);
+  border-radius: 10rpx;
+  border: 2rpx solid rgba(51, 51, 51, 1);
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+  padding: 10rpx 30rpx;
+}

@@ -1,0 +1,24 @@
+.help-title{
+  padding: 38rpx 30rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:40rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+.help-list{
+  display: -webkit-flex;
+  justify-content: space-between;
+  padding: 38rpx 30rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:40rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+.help-list image{
+  width: 16rpx;
+  height: 26rpx;
+}

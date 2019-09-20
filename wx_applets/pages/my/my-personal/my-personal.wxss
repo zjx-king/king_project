@@ -1,0 +1,52 @@
+.btn{
+  display: -webkit-flex;
+  justify-content: flex-end;
+  padding-right: 30rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+  box-sizing: border-box;
+}
+.btn button{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.personal image{
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+  margin: 80rpx auto;
+  border-radius: 50%;
+}
+.personal-edit{
+  padding: 40rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  align-items: center;
+}
+.personal-edit text{
+  display: inline-block;
+  height: 22.4px;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:22.4px;
+}
+.personal-edit text:nth-of-type(1){
+   color:rgba(102,102,102,1);
+   margin-right: 60rpx;
+} 
+.personal-edit input{
+  flex: 1;
+   font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:40rpx;
+}

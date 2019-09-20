@@ -1,0 +1,361 @@
+.head {
+  padding: 30rpx;
+  border-top: 1px solid #eee;
+  padding-left: 160rpx;
+  position: relative;
+  padding-bottom: 40rpx;
+}
+
+.head .tx {
+  position: absolute;
+  left: 30rpx;
+  top: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.head .h2 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 44rpx;
+  display: block;
+  margin-bottom: 10rpx;
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.head .p {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 34rpx;
+  display: block;
+}
+
+.head .flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.head .flex .item {
+  text-align: center;
+}
+
+.head .flex .h3 {
+  font-size: 32rpx;
+  display: block;
+  margin-bottom: 10rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 44rpx;
+}
+
+.head .flex .span {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 34rpx;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 4rpx solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 99;
+}
+
+.nav .item {
+  padding: 10rpx 0;
+  border-bottom: 4rpx solid transparent;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 44rpx;
+  margin: 0 30rpx;
+  margin-bottom: -4rpx;
+  transition: 0.3s;
+}
+
+.nav .item.active {
+  border-color: #333;
+  color: #333;
+  font-weight: bold;
+}
+
+.tab-nav {
+  display: block;
+  overflow: hidden;
+  padding-top: 20rpx;
+  padding-right: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.tab-nav view {
+  float: right;
+  font-size: 0;
+}
+
+.tab-nav view text {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 34rpx;
+  padding: 10rpx 22rpx;
+  border: 1px solid #eee;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.tab-nav view text:first-child {
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+
+.tab-nav view text:last-child {
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+
+.tab-nav view text.active {
+  color: #fff;
+  background: #333;
+  border-color: #333;
+}
+
+.li {
+  position: relative;
+  padding: 30rpx;
+}
+
+.li .cont {
+  background: #f4f4f4;
+  margin-left: 74rpx;
+  padding: 20rpx;
+  position: relative;
+  min-height: 150rpx;
+}
+
+.li .cont .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+
+.li .cont .flex .hot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.li .cont .flex .hot text {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 34rpx;
+}
+
+.li .cont .flex .hot image {
+  width: 26rpx;
+  height: 34rpx;
+  margin-right: 10rpx;
+}
+
+.li .cont .h2 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 44rpx;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.li .cont .h3 {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.li .cont .p {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 40rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.li .cont .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 92rpx;
+  height: 94rpx;
+}
+
+.li .time {
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+}
+
+.li .time .zg {
+  width: 28rpx;
+  height: 34rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10rpx;
+}
+
+.li .time .like {
+  width: 34rpx;
+  height: 30rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10rpx;
+}
+
+.li .time .p {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 44rpx;
+}
+
+.li .time .span {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40rpx;
+}
+
+.tip {
+  text-align: center;
+  padding: 10rpx 0;
+  padding-bottom: 40rpx;
+  display: block;
+  font-size: 28rpx;
+  color: #777;
+}
+
+.more {
+  position: absolute;
+  right: 0rpx;
+  top: 20rpx;
+  z-index: 999;
+  padding: 10rpx 30rpx;
+}
+
+.more .icon {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background: #333;
+  position: relative;
+}
+
+.more .icon::before, .more .icon::after {
+  content: "";
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  margin-left: -20rpx;
+  border-radius: 50%;
+  background: #333;
+}
+
+.more .icon::after {
+  margin-left: -40rpx;
+  margin-right: 10rpx;
+}
+
+.more .more-body {
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  right: 30rpx;
+  width: 250rpx;
+  text-align: center;
+  top: 40rpx;
+  border-radius: 10rpx;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.more .more-body::before {
+  content: "";
+  position: absolute;
+  top: -10rpx;
+  right: 25rpx;
+  width: 0;
+  height: 0;
+  border-right: 10rpx solid transparent;
+  border-left: 10rpx solid transparent;
+  border-bottom: 10rpx solid rgba(0, 0, 0, 0.8);
+}
+
+.more .more-body text:first-child {
+  border-bottom: 1rpx solid #ddd;
+}
+
+.more .more-body text {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 40rpx;
+  padding: 25rpx 0;
+}
+
+.more .more-body.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 101;
+}
+.gz-zu{
+  overflow: hidden;
+  padding-bottom: 2rpx;
+  padding-top: 20rpx;
+}
+.gz-btn {
+  float: left;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 2rpx 2rpx 0px 0px rgba(51, 51, 51, 1);
+  border-radius: 10rpx;
+  border: 2rpx solid rgba(51, 51, 51, 1);
+  font-size: 28rpx;
+  font-family: PingFangSC;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 60rpx;
+  width: 140rpx;
+  height: 60rpx;
+  padding: 0;
+}

@@ -1,0 +1,11 @@
+<view class="catalog">
+  <view class="catalog-btn" wx:if="{{cataType == 0}}">
+    <button bindtap="goBack">返回上一级</button>
+  </view>
+  <view class="catalog-thread" data-article_id="{{thread.article_id}}" data-brainhole_id="{{thread.brainhole_id}}" bindtap="goDetail">
+    <text decode = "{{true}}" class="{{thread.article_id ==  article_id ? 'record':''}}"> 第{{thread.article_chapter}}章&nbsp;&nbsp;&nbsp;<text wx:if="{{thread.article_branch == 1}}" class="{{thread.article_id ==  article_id ? 'record':''}}">主线</text><text wx:else class="{{thread.article_id ==  article_id ? 'record':''}}">非主线</text> 第{{thread.article_chapter}}章</text>
+  </view>
+  <view class="catalog-list" wx:for="{{catalogList}}" wx:key data-article_id="{{item.article_id}}" data-brainhole_id="{{item.brainhole_id}}" bindtap="goDetail">
+    <text decode = "{{true}}" class="{{item.article_id ==  article_id ? 'record':''}}">第{{item.article_chapter}}章&nbsp;&nbsp;{{item.article_title}}</text>
+  </view>
+</view>

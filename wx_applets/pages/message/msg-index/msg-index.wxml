@@ -1,0 +1,43 @@
+<!--pages/message/msg-index/msg-index.wxml-->
+<view class="ul">
+  <view class="li" bindtap="toPage" data-url="/pages/message/msg-system/msg-system">
+    <image class="tx" src="/images/msg1.png"></image>
+    <text>官方通知</text>
+    <text class="p" wx:if="{{sys.official_id==0}}">{{sys.add_time}}</text>
+    <image class="icon" src="/images/icon-right.png"></image>
+  </view>
+
+  <view class="li" bindtap="toPage" data-url="/pages/message/msg-like/msg-like">
+    <image class="tx" src="/images/msg2.png"></image>
+    <text>喜欢</text>
+    <text wx:if="{{userMsg.like>0}}" class="span">{{userMsg.like}}</text> 
+    <image class="icon" src="/images/icon-right.png"></image>
+  </view>
+
+  <view class="li" bindtap="toPage" data-url="/pages/message/msg-comment/msg-comment">
+    <image class="tx" src="/images/msg3.png"></image>
+    <text>评论</text>
+    <text wx:if="{{userMsg.comments>0}}" class="span">{{userMsg.comments}}</text> 
+    <image class="icon" src="/images/icon-right.png"></image>
+  </view>
+
+  <view class="li" bindtap="toPage" data-url="/pages/message/msg-chase/msg-chase">
+    <image class="tx" src="/images/msg4.png"></image>
+    <text>追更</text>
+    <text wx:if="{{userMsg.update>0}}" class="span">{{userMsg.update}}</text> 
+    <image class="icon" src="/images/icon-right.png"></image>
+  </view>
+
+  <view class="li" bindtap="toPage" data-url="/pages/message/msg-attention/msg-attention">
+    <image class="tx" src="/images/msg5.png"></image>
+    <text>关注</text>
+    <text wx:if="{{userMsg.focus>0}}" class="span">{{userMsg.focus}}</text> 
+    <image class="icon" src="/images/icon-right.png"></image>
+  </view>
+
+  <!-- <view class="li" bindtap="toPage" data-url="/pages/message/msg-invite/msg-invite">
+    <image class="tx" src="/images/msg6.png"></image>
+    <text>邀请</text>
+    <image class="icon" src="/images/icon-right.png"></image>
+  </view> -->
+</view>

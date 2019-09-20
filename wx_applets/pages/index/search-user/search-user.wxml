@@ -1,0 +1,20 @@
+<!--pages/index/search-user/search-user.wxml-->
+
+<scroll-view scroll-y="true">
+<!-- 搜索到的用户列表 -->
+<view>
+  <view class='userList' wx:for="{{userList}}" wx:key data-id='{{item.user_id}}' bindtap="goOthers">
+    <view class='userList-left'>
+      <image src='{{item.user_image}}' />
+      <text>{{item.user_name}}</text>
+    </view>
+    <view class='userList-right'>
+      <text>共{{item.user_brainhole_count}}条脑洞</text>
+      <image src='/images/my/icon-rjt.png' />
+    </view>
+  </view>
+</view>
+</scroll-view>
+<view hidden='{{show}}' class="tips" style='text-align:center;padding:20rpx 0;'>
+  已没有更多数据
+</view>
